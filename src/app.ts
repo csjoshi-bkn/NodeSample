@@ -15,6 +15,7 @@ class App {
   constructor() {
     this.express = express();
     this.middleware();
+    this.routes();
   }
 
   // Configure Express middleware.
@@ -37,6 +38,7 @@ class App {
         message: 'Hello World!'
       });
     });
+
     this.express.use('/hello', router);
     this.express.use('/heroes', HeroRouter);
     this.express.use('/heroes/delete', HeroRouter);

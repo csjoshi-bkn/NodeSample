@@ -49,11 +49,11 @@ export class HeroRouter {
     //Heroes.delete(hero => hero.id == query);
     var fs = require('fs');
     
-    var data = fs.readFileSync('/Users/chandrashekharjoshi/VS Code/Typescript/dist/data.json');
+    var data = fs.readFileSync('./src/data.json');
     var json = JSON.parse(data);
     //var heroes = json;
     json = json.filter((hero) => { return hero.id !== query });
-    fs.writeFileSync('results.json', JSON.stringify(json, null, 2));
+    fs.writeFileSync('./src/results.json', JSON.stringify(json, null, 2));
         //res.header("Access-Control-Allow-Origin", "null");
         //res.header("Access-Control-Allow-Origin", "*");
         res.send(json);
